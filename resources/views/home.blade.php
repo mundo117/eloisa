@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <body>
 
@@ -25,6 +24,7 @@
                 <a href="index.html">
                     <img src="{{asset('images/logo-light.png')}}" class="image-dark" alt=""/>
                     <img src="{{asset('images/logo-light-dark-layout.png')}}" class="image-light" alt=""/>
+                    <meta name="_token" content="{!! csrf_token() !!}" />
                 </a>
             </div>
         </div>
@@ -78,42 +78,11 @@
     <!--Page Body Start-->
     <div class="page-body-wrapper">
         <!--Page Sidebar Start-->
-        <div class="page-sidebar custom-scrollbar">
-            <div class="sidebar-user text-center">
-                <div>
-                    <img class="img-50 rounded-circle" src="{{asset('images/user/1.jpg')}}" alt="#">
-                </div>
-                <h6 class="mt-3 f-12">Johan Deo</h6>
-            </div>
-            <ul class="sidebar-menu">
-                <li class="active">
-                    <div class="sidebar-title">General</div>
-                    <a href="#" class="sidebar-header">
-                        <i class="icon-desktop"></i><span>Dashboard</span>
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="index.html" class="active"><i class="fa fa-angle-right"></i>Default</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="sidebar-header">
-                        <i class="icon-blackboard"></i><span>Widgets</span>
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="general-widget.html"><i class="fa fa-angle-right"></i>General widget</a></li>
-                        <li><a href="chart-widget.html"><i class="fa fa-angle-right"></i>Chart widget</a></li>
-                    </ul>
-                </li>
-               
-            </ul>
-        </div>
+     @include('template/sidebar')
         <!--Page Sidebar Ends-->
 
         <div class="page-body">
-            
-           
+              @yield('content2')
         </div>
         <!--Page Body Ends-->
     </div>
@@ -124,7 +93,9 @@
 @endsection
 
 <!-- Scripts -->
+
 @section ('script')
+
   <!-- latest jquery-->
 <script src="{{asset('js/jquery-3.2.1.min.js')}}" ></script>
 
@@ -163,8 +134,8 @@
  <!-- Theme js-->
 <script src="{{asset('js/script.js')}}" ></script>
 <!-- <script src="{{asset('js/theme-customizer/customizer.js')}}"></script> -->
-<!-- <script src="{{asset('js/chat-sidebar/chat.js')}}"></script> -->
-<script src="{{asset('js/dashboard-default.js')}}" ></script> 
+<!-- <script src="{{asset('js/chat-sidebar/chat.js')}}"></script> 
+<script src="{{asset('js/dashboard-default.js')}}" ></script> -->
 
 <!-- Counter js-->
 <script src="{{asset('js/counter/jquery.waypoints.min.js')}}"></script>
@@ -173,4 +144,5 @@
 
 <script src="{{asset('js/notify/bootstrap-notify.min.js')}}"></script>
 <script src="{{asset('js/notify/index.js')}}"></script>
+@yield('scriptOnlyPage')
 @endsection
