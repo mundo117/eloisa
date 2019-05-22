@@ -34,7 +34,7 @@ $(document).ready(function(){
                 console.log(data);
                 var r = confirm("Estas seguro que quiereres permitir el acesso!");
                 if (r == true) {
-                    var product = "<button type='button' value="+data.id+" id='optionmenu"+data.id+"' class='btn btn-danger delete-option'><i class='clip-locked'></i></button><h1>";
+                    var product = "<button type='button' value="+data.id+" id='optionmenu"+data.id+"' class='btn btn-danger delete-option'><i class='fa fa-lock'></i></button><h1>";
                 $("#optionmenu" + usertype_id).replaceWith(product);
                 } else {
                   

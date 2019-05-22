@@ -12,7 +12,7 @@ class TypeUserDetailController extends Controller
      public function index($id)
     {
   
-            $optionsmenu =  TypeUserDetailModel::select('tu_detail.id as id','bm.name as name', 'bm.icon as icon', 'tu_detail.status as status')
+            $optionsmenu = TypeUserDetailModel::select('tu_detail.id as id','bm.name as name', 'bm.icon as icon', 'tu_detail.status as status')
             ->join('basic_menu as bm', 'bm.id', '=', 'tu_detail.id_menu')
             ->where('tu_detail.id_type_user',$id)
             ->get();

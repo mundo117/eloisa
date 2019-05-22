@@ -1,9 +1,9 @@
 var $ = jQuery;
 $(document).ready(function(){
     
- $(".search-food").on("keyup", function() {
+ $(".search-usertype").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#products-list tr").filter(function() {
+    $("#usertype-list card-header").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });

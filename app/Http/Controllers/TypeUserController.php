@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\TypeUserModel;
 use App\BasicMenuModel;
+use App\TypeUserDetailModel;
 
 class TypeUserController extends Controller
 {
@@ -40,14 +41,11 @@ class TypeUserController extends Controller
             ];
             print_r($data);
         
-           $new = AssignamentTypeModel::insert($data);
+           $new = TypeUserDetailModel::insert($data);
           
          }
          $usertype2 = TypeUserModel::find($id);
         return response()->json($usertype2);
-       
-
-
         
     }
 
