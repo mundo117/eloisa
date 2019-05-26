@@ -3,7 +3,7 @@
                 <div>
                     <img class="img-50 rounded-circle" src="{{asset('images/user/1.jpg')}}" alt="#">
                 </div>
-                <h6 class="mt-3 f-12">Johan Deo</h6>
+                <h6 class="mt-3 f-12">{{auth()->user()->username}}</h6>
             </div>
             <ul class="sidebar-menu">
                 <li class="active">

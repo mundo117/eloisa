@@ -40,3 +40,15 @@ Route::get('/assignmenttype/{id}', 'TypeUserDetailController@index');
 Route::put('/assignmenttype/{id}/{detailfood_id}', 'TypeUserDetailController@update');
 // delete product
 Route::delete('/assignmenttype/{id}/{detailfood_id}', 'TypeUserDetailController@destroy');
+
+//USERS
+//Display Index Page
+Route::get('/users', 'UsersController@index');
+// Populate Data in Edit Modal Form
+Route::get('/users/{Users_id}', 'UsersController@show');
+//create New User
+Route::post('/users', 'UsersController@store');
+// update Existing User
+Route::put('/users/{Users_id}', 'UsersController@update');
+// delete User
+Route::delete('/users/{Users_id}', 'UsersController@destroy');

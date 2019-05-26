@@ -46,7 +46,7 @@
                                 <form class="theme-form" method="POST" action="{{ route('login') }}">
                                 @csrf
                                     <div class="form-group">
-                                        <label for="login" class="col-form-label pt-0">Nombre</label>
+                                        <label for="login" class="col-form-label pt-0">Usuario</label>
                                         <input id="login" type="login" class="form-control form-control-lg @error('login') is-invalid @enderror" name="login" value="{{ old('login') }}" required autocomplete="email" autofocus>
                                         @error('login')
                                     <span class="invalid-feedback" role="alert">
